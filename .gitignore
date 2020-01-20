@@ -1,1 +1,7 @@
 webdesign/node_modules
+webdesign/layout
+android/layout
+ios/layout
+*.pdf
+*.psd
+*.sketch
