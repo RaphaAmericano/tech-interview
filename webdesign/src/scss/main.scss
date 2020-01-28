@@ -1,4 +1,30 @@
 
-// @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import 'fonts';
+@import 'images';
+
 @import '~bootstrap/scss/bootstrap';
+
+//Basic Bootstrap SASS
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/type';
+@import '~bootstrap/scss/grid';
+
+//Custom imports of Bootstrap
+@import '~bootstrap/scss/nav';
+@import '~bootstrap/scss/navbar';
+@import '~bootstrap/scss/transitions';
+@import '~bootstrap/scss/dropdown';
+@import '~bootstrap/scss/jumbotron';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/utilities';
+
+//Custom SCSS
+body {
+    color: $white;
+    font-family: $poppins;
+}
+@import 'header';

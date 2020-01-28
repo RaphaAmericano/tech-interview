@@ -1,0 +1,30 @@
+header {
+    background-image: url($header-bg-image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &.collapse-nav{
+        background: $primary;
+    }
+    nav{
+        &.navbar-dark{
+
+        }
+        &.navbar-dark, &.navbar-light {
+            .navbar-toggler {
+                border-color: transparent;
+                color: $white;
+            }
+        }
+    }
+    .jumbotron{
+        background-color:transparent;
+        h1{
+            &:after{
+                font-family: initial;
+                content: '.';
+                color: $blue;
+            }
+        }
+    }
+}

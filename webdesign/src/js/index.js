@@ -1,3 +1,8 @@
 import '../scss/main.scss';
+import 'bootstrap';
 
-console.log("PUG");
+$(document).ready( () => { 
+    $('.navbar-toggler').on('click', () => {
+        $('.collapse').collapse('toggle');
+    });
+});
