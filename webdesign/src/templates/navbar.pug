@@ -1,13 +1,18 @@
 
 - options = ['blog', 'popular', 'about', 'archive']
 
-nav.navbar.navbar-fixed.container-fluid.navbar-dark
-    a.navbar-brand(href="#")
+nav.container.navbar.navbar-expand-lg.navbar-dark.sticky-top
+    a.navbar-brand(href="#") #{Navbar}
         img(src="https://placeholder.pics/svg/64x64", width="64", height="64", srcset="")
-    button.navbar-toggler(type='button', date-toggle='collapse', data-target="#mainNavbar", aria-controls='mainNavbar', aria-expanded='false', aria-label='Toggle navigation')
+    button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
         span.navbar-toggler-icon
-    div.navbar-collapse.collapse#mainNavbar
-        ul.navbar-nav
+    div.collapse.navbar-collapse.text-center#navbarNav
+        ul.navbar-nav.ml-auto.text-uppercase.font-weight-bold
             each item, index in options
-                li.nav-item
-                    a.nav-link(href= '#' + index)= item
+                li.nav-item.ml-5
+                    a.nav-link(href='#' + index )= item  
+                        case index  
+                            when 0
+                                span.sr-only #{'(current)'}
+                            
+

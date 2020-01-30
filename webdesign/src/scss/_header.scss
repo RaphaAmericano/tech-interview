@@ -1,22 +1,53 @@
 header {
-    background-image: url($header-bg-image);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: absolute;
+    width: 100%;
+    @include media-breakpoint-down(md) {
+        &.collapse-xs-extend {
+            background-color: $primary;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+      }
     &.collapse-nav{
         background: $primary;
     }
     nav{
-        &.navbar-dark{
-
-        }
         &.navbar-dark, &.navbar-light {
             .navbar-toggler {
                 border-color: transparent;
-                color: $white;
+                color: #FFF;
+                .icon_close {
+                    font-size: 3rem;
+                }
+            }
+            .navbar-nav{                
+                .nav-link {
+                    color: #FFF;
+                    font-size: 0.75rem;
+                }
+                @include media-breakpoint-down(md){
+                    .nav-link {
+                        font-size: 4rem;
+                    }
+                }
             }
         }
     }
+}
+.hero-content {
+    position: relative;
+    background-image: url($header-bg-image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    .mask{
+        background-color: rgba(0,0,0,0.5);
+    }  
     .jumbotron{
         background-color:transparent;
         h1{

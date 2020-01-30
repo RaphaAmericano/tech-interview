@@ -1,3 +1,5 @@
+$primary: #4A90E2;
+
 
 @import 'fonts';
 @import 'images';
@@ -23,8 +25,12 @@
 @import '~bootstrap/scss/utilities';
 
 //Custom SCSS
+* {
+    box-sizing: border-box;
+}
 body {
     color: $white;
     font-family: $poppins;
 }
 @import 'header';
+@import 'trend';

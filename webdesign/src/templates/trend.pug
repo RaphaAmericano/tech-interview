@@ -1,0 +1,12 @@
+- trends = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec lectus vitae nisl tempor semper.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec lectus vitae nisl tempor semper.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec lectus vitae nisl tempor semper.']
+section.trend
+    .container
+        .row
+            .col-sm
+                h4 #{'Trending'}
+                br
+                spam #{'Today'}
+            each trend in trends
+                .col-sm
+                    p= trend
+                
