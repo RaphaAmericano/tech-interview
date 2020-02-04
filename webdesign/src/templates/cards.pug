@@ -1,0 +1,15 @@
+- var contents = [{"photo":'../../images/43690.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43688.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43698.jpg', "title":'Titulo', "text":'Lorem Ipsum'}]
+
+mixin card(content)
+    .col-4
+        .card(style='18rem')
+            img.card-img-top.img-responsive(src=content.photo)
+            .card-body
+                h5.card-title= content.title
+                p.cart-text= content.text
+
+section.container.mt-5
+    .row
+        .card-deck 
+            each content in contents
+                +card(content)
