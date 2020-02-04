@@ -1,15 +1,20 @@
-- var contents = [{"photo":'../../images/43690.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43688.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43698.jpg', "title":'Titulo', "text":'Lorem Ipsum'}]
+- var contents = [{"photo":'../../images/43690.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43688.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43698.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43690.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43688.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43698.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43690.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43688.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43698.jpg', "title":'Titulo', "text":'Lorem Ipsum'}]
 
 mixin card(content)
     .col-4
-        .card(style='18rem')
+        .card.border-0(style='18rem')
             img.card-img-top.img-responsive(src=content.photo)
             .card-body
-                h5.card-title= content.title
-                p.cart-text= content.text
+                h5.card-title.text-dark= content.title
+                p.cart-text.text-secondary= content.text
 
 section.container.mt-5
     .row
-        .card-deck 
-            each content in contents
-                +card(content)
+        .carousel.slide#cardCarousel(data-ride='carousel')
+            .carousel-inner
+                .row 
+                    - for(var i = 0; i < contents.length; i++ )
+                        if(i % 3 == 0)
+                            .carousel-item 
+                                - for( var k = i; k < (i + 3); k++)
+                                    +card(contents[k])
