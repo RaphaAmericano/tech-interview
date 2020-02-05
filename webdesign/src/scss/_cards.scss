@@ -1,3 +1,28 @@
+
+.carousel-control-prev,
+.carousel-control-next{
+    opacity: 1;
+    span {
+        color: $primary;
+        font-size: 4em;
+    }
+}
+.carousel-control-prev{
+    left: -4em;
+}
+.carousel-control-next{
+    right: -4em;
+}
+
+.card {
+    .card-title{
+        color: $gray-700;
+    }
+    .card-text {
+        color: $gray-500;
+    }
+}
+
 .carousel-indicators {
     bottom: -5em;
     li {
