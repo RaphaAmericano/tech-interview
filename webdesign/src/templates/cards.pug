@@ -1,20 +1,46 @@
 - var contents = [{"photo":'../../images/43690.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43688.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43698.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43690.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43688.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43698.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43690.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43688.jpg', "title":'Titulo', "text":'Lorem Ipsum'}, {"photo":'../../images/43698.jpg', "title":'Titulo', "text":'Lorem Ipsum'}]
 
 mixin card(content)
-    .col-4
-        .card.border-0(style='18rem')
-            img.card-img-top.img-responsive(src=content.photo)
-            .card-body
-                h5.card-title.text-dark= content.title
-                p.cart-text.text-secondary= content.text
+    .card.border-0
+        img.card-img-top.img-responsive(src=content.photo)
+        .card-body
+            h5.card-title.text-dark= content.title
+            p.cart-text.text-secondary= content.text
+
+mixin controlers(id)
+    a(class="carousel-control-prev", href=id, role="button", data-slide="prev")
+        span( class="carousel-control-prev-icon", aria-hidden="true")
+        span(class="sr-only")=Previous
+    a(class="carousel-control-next", href=id, role="button", data-slide="next")
+        span(class="carousel-control-next-icon", aria-hidden="true")
+        span(class="sr-only")= Next
+
+mixin indicators(length, id)
+    ol.carousel-indicators
+        - for(var i = 0; i < length; i++)
+            - var active = i == 0 ? "active" : "";
+                li(class=active, data-target=id, data-slide-to=i )
 
 section.container.mt-5
-    .row
+    .row.carousel-desktop
         .carousel.slide#cardCarousel(data-ride='carousel')
             .carousel-inner
-                .row 
-                    - for(var i = 0; i < contents.length; i++ )
-                        if(i % 3 == 0)
-                            .carousel-item 
+                - for(var i = 0; i < contents.length; i++ )
+                    if(i % 3 == 0)
+                        - var active = i == 0 ? "carousel-item active" : "carousel-item"
+                        div(class=active )
+                            .row
                                 - for( var k = i; k < (i + 3); k++)
-                                    +card(contents[k])
+                                    .col-4
+                                        +card(contents[k])
+            if(contents.length > 3 )
+                +controlers("#cardCarousel")
+    .row.carousel-mobile
+        .carousel.slide#cardCarouselMobile(data-ride='carousel')
+            .carousel-inner
+                - for(var i = 0; i < contents.length; i++ )
+                    - var active = i == 0 ? "carousel-item active" : "carousel-item"
+                    div(class=active )
+                        +card(contents[i])
+            +indicators(contents.length, "#cardCarouselMobile")
+    
