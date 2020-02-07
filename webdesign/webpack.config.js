@@ -3,6 +3,8 @@ const path = require('path');
 const MiniExtract = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const ImageMin = require('imagemin-webpack-plugin');
 const webpack = require('webpack');
 module.exports = {
     entry: {
@@ -52,14 +54,19 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(jpg|png)$/,
+                test: /\.(jpe?g|png|gif|svg|webp)$/i,
                 use:[
                     {
                         loader:'file-loader',
                         options:{
                             name:'[name].[ext]',
-                            outputPath: 'img/'
+                            outputPath: 'img/',
+                            publicPath: 'img/'
                         }
+                    },
+                    {
+                        loader:'image-webpack-loader',
+
                     }
                 ]
             }
@@ -95,6 +102,12 @@ module.exports = {
             Tab:'exports-loader?Tab!bootstrap/js/dist/alert',
             Tooltip:'exports-loader?Tooltip!bootstrap/js/dist/alert',
             Util:'exports-loader?Util!bootstrap/js/dist/alert'
-        })
+        }),
+        new CopyPlugin([
+            {
+                from:'images',
+                to:'img'
+            }
+        ])
     ]
 }
