@@ -1,5 +1,5 @@
 $primary: #4A90E2;
-
+$border-radius: 0.5rem;
 
 @import 'fonts';
 @import 'images';
@@ -35,3 +35,4 @@ body {
 @import 'header';
 @import 'trend';
 @import 'cards';
+@import 'about';

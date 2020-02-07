@@ -1,0 +1,22 @@
+.about {
+    margin-top: 3em;
+    p{
+        color: $gray-700;
+    }
+    h4 {
+        @include media-breakpoint-down(xs){
+        margin-top: 1em;
+        }
+    }
+    @include media-breakpoint-down(xs){
+        padding-left: 2em;
+        padding-right: 2em;
+        margin-top: 6em;
+    }
+    img {
+        @include media-breakpoint-up(sm){
+            height: 8rem;
+        }
+        border-radius: 0.5rem;
+    }
+}

@@ -1,7 +1,7 @@
 - var contents = [{"photo":'../../images/43690.jpg', "title":'International Space Station', "text":'Lorem Ipsum'}, {"photo":'../../images/43688.jpg', "title":'My Capsule', "text":'Lorem Ipsum'}, {"photo":'../../images/43698.jpg', "title":'My moon', "text":'Lorem Ipsum'},{"photo":'../../images/43690.jpg', "title":'International Space Station', "text":'Lorem Ipsum'}, {"photo":'../../images/43688.jpg', "title":'My Capsule', "text":'Lorem Ipsum'}, {"photo":'../../images/43698.jpg', "title":'My moon', "text":'Lorem Ipsum'}]
 
 mixin card(content)
-    .card.border-0.rounded
+    .card
         img.card-img-top.img-responsive(src=content.photo)
         .card-body
             h5.card-title.h6= content.title
@@ -22,8 +22,8 @@ mixin indicators(length, id)
             - var active = i == 0 ? "active" : "";
                 li(class=active, data-target=id, data-slide-to=i )
 
-section.container.mt-5
-    .row.carousel-desktop
+section.container.mt-5.px-5.px-sm-0
+    .row.carousel-desktop.d-none.d-sm-block
         .carousel.slide#cardCarousel(data-ride='carousel')
             .carousel-inner
                 - for(var i = 0; i < contents.length; i++ )
@@ -36,12 +36,13 @@ section.container.mt-5
                                         +card(contents[k])
             if(contents.length > 3 )
                 +controlers("#cardCarousel")
-    .row.carousel-mobile
+    .row.carousel-mobile.d-block.d-sm-none
         .carousel.slide#cardCarouselMobile(data-ride='carousel')
             .carousel-inner
-                - for(var i = 0; i < contents.length; i++ )
-                    - var active = i == 0 ? "carousel-item active" : "carousel-item"
-                    div(class=active )
-                        +card(contents[i])
+                .card-deck
+                    - for(var i = 0; i < contents.length; i++ )
+                        - var active = i == 0 ? "carousel-item active" : "carousel-item"
+                        div(class=active )
+                            +card(contents[i])
             +indicators(contents.length, "#cardCarouselMobile")
     
