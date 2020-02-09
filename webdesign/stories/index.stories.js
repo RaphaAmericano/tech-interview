@@ -1,5 +1,6 @@
+import 'bootstrap';
 export default {
-  title: 'Demo',
+  title: 'Space Theme',
 };
 
 export const Heading = () => '<h1>Hello, Space</h1>';
