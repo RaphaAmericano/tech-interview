@@ -3,12 +3,21 @@
     @include media-breakpoint-down(md){
         display: none;
     }
+    hr {
+        height: 40vh;
+        width: 2px;
+        border: none;
+        border-left: 1px solid #FFF;
+    }
     .col-sm {
         h4 {
             line-height: 1.5em;
         }
         span {
             color: $primary;
+        }
+        p {
+            margin-bottom: 0;
         }
     }
 }

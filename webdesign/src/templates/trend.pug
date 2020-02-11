@@ -1,13 +1,15 @@
 - trendToday = 'Tranding<br><span>Today</span>';
 - trends = ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec lectus vitae nisl tempor semper.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec lectus vitae nisl tempor semper.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec lectus vitae nisl tempor semper.']
 .container
-    .row.align-items-center
-        .col-sm.text-right.border-right.pl-5.pr-5.font-weight-bold
+    .row.align-items-center.py-4
+        .col-sm.text-right.px-5.font-weight-bold
             h4 !{trendToday}
         each trend, index in trends
             if (index == trends.length - 1)
+                hr
                 .col-sm
                     p= trend   
             else
-                .col-sm.border-right
+                hr
+                .col-sm
                     p= trend   

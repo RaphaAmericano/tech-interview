@@ -42,7 +42,8 @@ $controlersDistance : 8rem;
 .carousel-desktop {
     .card {
         .card-img-top {
-            height: 8rem;
+            min-height: 16rem;
+            height: auto;
         }
     }
 }
