@@ -1,7 +1,7 @@
 - var contents = [{"photo":'../../images/43690.jpg', "title":'International Space Station', "text":'Lorem Ipsum'}, {"photo":'../../images/43688.jpg', "title":'My Capsule', "text":'Lorem Ipsum'}, {"photo":'../../images/43698.jpg', "title":'My moon', "text":'Lorem Ipsum'},{"photo":'../../images/43690.jpg', "title":'International Space Station', "text":'Lorem Ipsum'}, {"photo":'../../images/43688.jpg', "title":'My Capsule', "text":'Lorem Ipsum'}, {"photo":'../../images/43698.jpg', "title":'My moon', "text":'Lorem Ipsum'}]
 
 mixin card(content)
-    .card
+    .card.border-0
         img.card-img-top.img-responsive(src=content.photo)
         .card-body
             h5.card-title.h6= content.title
@@ -22,7 +22,7 @@ mixin indicators(length, id)
             - var active = i == 0 ? "active" : "";
                 li(class=active, data-target=id, data-slide-to=i )
 
-section.container
+section.container.mt-5
     .row.carousel-desktop.d-none.d-sm-block
         .carousel.slide#cardCarousel(data-ride='carousel')
             .carousel-inner
@@ -37,7 +37,7 @@ section.container
             if(contents.length > 3 )
                 +controlers("#cardCarousel")
     .row.carousel-mobile.d-block.d-sm-none
-        .carousel.slide#cardCarouselMobile(data-ride='carousel')
+        .carousel.slide.px-5#cardCarouselMobile(data-ride='carousel')
             .carousel-inner
                 .card-deck
                     - for(var i = 0; i < contents.length; i++ )
