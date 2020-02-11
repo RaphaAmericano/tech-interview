@@ -10,8 +10,7 @@ header {
             left: 0;
             height: 100%;
             width: 100%;
-            padding-left: 15px;
-            padding-right: 15px;
+            z-index: 1090;
         }
       }
     &.collapse-nav{
@@ -19,6 +18,11 @@ header {
     }
     nav{
         &.navbar-dark, &.navbar-light {
+            .navbar-collapse{
+                @include media-breakpoint-down(md){
+                    margin-top: 5rem;
+                }
+            }
             .navbar-toggler {
                 border-color: transparent;
                 color: #FFF;
@@ -33,7 +37,7 @@ header {
                 }
                 @include media-breakpoint-down(md){
                     .nav-link {
-                        font-size: 4rem;
+                        font-size: 2rem;
                     }
                 }
             }
