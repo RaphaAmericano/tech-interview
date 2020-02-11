@@ -1,3 +1,4 @@
+$controlersDistance : 8rem;
 .carousel-control-prev,
 .carousel-control-next{
     opacity: 1;
@@ -7,10 +8,10 @@
     }
 }
 .carousel-control-prev{
-    left: -4em;
+    left: -($controlersDistance);
 }
 .carousel-control-next{
-    right: -4em;
+    right: -($controlersDistance);
 }
 .card {
     .card-title{
