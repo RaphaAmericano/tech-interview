@@ -60,8 +60,8 @@ module.exports = {
                         loader:'file-loader',
                         options:{
                             name:'[name].[ext]',
-                            outputPath: 'img/',
-                            publicPath: 'img/'
+                            outputPath: 'images/',
+                            publicPath: 'images/'
                         }
                     },
                     {
@@ -106,7 +106,7 @@ module.exports = {
         new CopyPlugin([
             {
                 from:'images',
-                to:'img'
+                to:'images'
             }
         ])
     ]
