@@ -2,10 +2,11 @@ $font-size-xl: $font-size-base * 5.5 ;
 header {
     position: absolute;
     width: 100%;
+    transition: all 0.5s ease-in-out ;
     @include media-breakpoint-down(md) {
         &.collapse-xs-extend {
             background-color: $primary;
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             height: 100%;
@@ -13,6 +14,10 @@ header {
             z-index: 1090;
         }
       }
+    &.header-bg {
+        background-color: $primary;
+        transition: all 0.5s ease-in-out ;
+    }
     &.collapse-nav{
         background: $primary;
     }
@@ -43,7 +48,7 @@ header {
             }
         }
         svg {
-            width: 5rem;
+            width: 4rem;
         }
     }
 }
